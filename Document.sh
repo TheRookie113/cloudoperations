@@ -43,7 +43,6 @@ CHECK_FREQUENCY=5
 #==============================================================================
 #
 # Create VPC
-msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi -y
 aws --version
 echo "Creating VPC in preferred region..."
 VPC_ID=$(aws ec2 create-vpc --cidr-block $VPC_CIDR --query 'Vpc.{VpcId:VpcId}' --output text --region $AWS_REGION)
